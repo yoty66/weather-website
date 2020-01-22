@@ -5,7 +5,7 @@ const geoCode = require('./utils/geocode');
 const forcast = require('./utils/forcast');
 
 const app = express();
-
+const port = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, '../public')));
 hbs.registerPartials(path.join(__dirname, '../templates/partials'));
@@ -75,6 +75,6 @@ app.get('*', (req,res)=>{
     res.render('404', {title:'404 page',errorMessage:'page not found',name:'Yotam'});
 });
 
-app.listen(3001, ()=>{
-    console.log('Server is up on port 3001!');
+app.listen(port, ()=>{
+    console.log(`Server is up on port ${port}!`);
 })

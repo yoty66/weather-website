@@ -13,7 +13,7 @@ messageOne.textContent ='123å'
 weatherForm.addEventListener('submit', (e)=>{
     messageOne.textContent ='loading ....'
     const location = search.value
-fetch(`http://localhost:3001/weather?adress=${location}`).then((response)=>{
+fetch(`/weather?adress=${location}`).then((response)=>{
     response.json().then((data)=>{
         if(data.error)
         {
